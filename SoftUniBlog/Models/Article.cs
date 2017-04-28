@@ -31,7 +31,7 @@ namespace SoftUniBlog.Models
         }
 
         [Url]
-        [Display(Name="Image")]
+        [Display(Name="Image Url")]
         [ImageAttributes]
         public string ImageUrl { get; set; }
 

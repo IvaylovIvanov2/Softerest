@@ -3,11 +3,17 @@
 }
 
 <link href="~/Scripts/animate.css" rel="stylesheet" type="text/css" />
+<script src="~/Scripts/wow.js"></script>
+
+<script>
+    new WOW().init();
+</script>
+        
 
 <div class="container fadeInDown animated">
     <div class="jumbotron">
         <h1 class="text-center">Softerest</h1>
-        <div class="container bounce animated">
+        <div class="container bounce animated" data-wow-delay="1s">
             <p class="text-center"><a>@Html.ActionLink("Create Your Own Article", "Create", "Article", null, new { @class = "btn btn-primary btn-lg" })</a></p>
             <p class="text-center"><a>@Html.ActionLink("Take A Look Around ", "List", "Article", null, new { @class = "btn btn-primary btn-lg" })</a></p>
         </div>

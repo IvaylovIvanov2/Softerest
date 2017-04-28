@@ -2,40 +2,147 @@
 
 @{
     ViewBag.Title = "List";
+    var count = 0;
 }
+
+<link href="~/Scripts/animate.css" rel="stylesheet" type="text/css" />
 
 <div class="container">
     <div class="row">
         @foreach (var article in Model)
         {
-            <div class="col-sm-6">
-                <article>
-                    <header>
-                        <h2 class="text-center">
-                            @Html.ActionLink(@article.Title, "Details", "Article", new { @id = article.Id }, null)
-                        </h2>
-                    </header>
-                    <p>
-                        @article.Content
-                    </p>
-                    <p class="text-center">
-                        @if (article.ImageUrl != null)
-                        {
-                            <img src="@article.ImageUrl" class="img-responsive" />
-                        }
-                        @if (article.BrowseImage != null)
-                        {
-                            <img src="@article.BrowseImage" class="img-responsive" />
-                        }
-                    </p>
-                    <footer class="pull-right">
-                        <small class="author">
-                            @article.Author.FullName
-                        </small>
-                    </footer>
-                </article>
-            </div>
+            
+            if (count == 0)
+            {
+
+                <div class="col-sm-6 container fadeInLeft animated">
+                    <article>
+                        <header>
+                            <h2 class="text-center">
+                                @Html.ActionLink(@article.Title, "Details", "Article", new { @id = article.Id }, null)
+                            </h2>
+                        </header>
+                        <p>
+                            @article.Content
+                        </p>
+                        <p class="text-center">
+                            @if (article.ImageUrl != null)
+                            {
+                                <img src="@article.ImageUrl" class="img-responsive" />
+                            }
+                            @if (article.BrowseImage != null)
+                            {
+                                <img src="@article.BrowseImage" class="img-responsive" />
+                            }
+                        </p>
+                        <footer class="pull-right">
+                            <small class="author">
+                                @article.Author.FullName
+                            </small>
+                        </footer>
+                    </article>
+                </div>
+            }
+            else if(count == 1)
+            {
+
+                <div class="col-sm-6 container fadeInRight animated">
+                    <article>
+                        <header>
+                            <h2 class="text-center">
+                                @Html.ActionLink(@article.Title, "Details", "Article", new { @id = article.Id }, null)
+                            </h2>
+                        </header>
+                        <p>
+                            @article.Content
+                        </p>
+                        <p class="text-center">
+                            @if (article.ImageUrl != null)
+                            {
+                                <img src="@article.ImageUrl" class="img-responsive" />
+                            }
+                            @if (article.BrowseImage != null)
+                            {
+                                <img src="@article.BrowseImage" class="img-responsive" />
+                            }
+                        </p>
+                        <footer class="pull-right">
+                            <small class="author">
+                                @article.Author.FullName
+                            </small>
+                        </footer>
+                    </article>
+                </div>
+            }
+            else if (count == 2)
+            {
+
+                <div class="col-sm-6 container zoomIn animated">
+                    <article>
+                        <header>
+                            <h2 class="text-center">
+                                @Html.ActionLink(@article.Title, "Details", "Article", new { @id = article.Id }, null)
+                            </h2>
+                        </header>
+                        <p>
+                            @article.Content
+                        </p>
+                        <p class="text-center">
+                            @if (article.ImageUrl != null)
+                            {
+                                <img src="@article.ImageUrl" class="img-responsive" />
+                            }
+                            @if (article.BrowseImage != null)
+                            {
+                                <img src="@article.BrowseImage" class="img-responsive" />
+                            }
+                        </p>
+                        <footer class="pull-right">
+                            <small class="author">
+                                @article.Author.FullName
+                            </small>
+                        </footer>
+                    </article>
+                </div>
+            }
+            else if (count == 3)
+            {
+
+                <div class="col-sm-6 container fadeIn animated">
+                    <article>
+                        <header>
+                            <h2 class="text-center">
+                                @Html.ActionLink(@article.Title, "Details", "Article", new { @id = article.Id }, null)
+                            </h2>
+                        </header>
+                        <p>
+                            @article.Content
+                        </p>
+                        <p class="text-center">
+                            @if (article.ImageUrl != null)
+                            {
+                                <img src="@article.ImageUrl" class="img-responsive" />
+                            }
+                            @if (article.BrowseImage != null)
+                            {
+                                <img src="@article.BrowseImage" class="img-responsive" />
+                            }
+                        </p>
+                        <footer class="pull-right">
+                            <small class="author">
+                                @article.Author.FullName
+                            </small>
+                        </footer>
+                    </article>
+                </div>
+            }
+            count++;
+            if(count == 4)
+            {
+                count = 0;
+            }
         }
-    </div>
+
+            </div>
 </div>
 <hr />
