@@ -17,7 +17,14 @@
                     @Model.Content
                 </div>
                 <div class="col-sm-6">
-                    <img src="@Model.ImageUrl" class="img-responsive">
+                    @if (Model.ImageUrl != null)
+                    {
+                        <img src = "@Model.ImageUrl" class="img-responsive" />
+                    }
+                    @if (Model.BrowseImage != null)
+                    {
+                        <img src="@Model.BrowseImage" class="img-responsive" />
+                    }
                 </div>
             </div>
                 <small class="author">

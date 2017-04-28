@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SoftUniBlog.Infrastructure;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -28,10 +29,14 @@ namespace SoftUniBlog.Models
         {
             return this.AuthorId == authorId;
         }
-        [Required]
+
         [Url]
         [Display(Name="Image")]
+        [ImageAttributes]
         public string ImageUrl { get; set; }
+
+        [Display(Name = "Browse Image")]
+        public string BrowseImage { get; set; }
 
 
 

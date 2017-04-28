@@ -31,7 +31,7 @@ namespace SoftUniBlog.Controllers
 
         [Authorize]
         [HttpPost]
-        public ActionResult Create(Article article)
+        public ActionResult Create(Article article, HttpPostedFileBase BrowseImage)
         {
             if(ModelState.IsValid)
             {
@@ -40,6 +40,24 @@ namespace SoftUniBlog.Controllers
                     var authorId = this.User.Identity.GetUserId();
 
                     article.AuthorId = authorId;
+
+                    if(BrowseImage != null)
+                    {
+                        var allowedContentTypes = new[] { "image/jpeg", "image/jpg", "image/png", "image/gif" };
+
+                        if(allowedContentTypes.Contains(BrowseImage.ContentType))
+                        {
+                            var imagesPath = "/Content/Images/";
+
+                            var fileName = BrowseImage.FileName;
+
+                            var uploadPath = imagesPath + fileName;
+
+                            BrowseImage.SaveAs(Server.MapPath(uploadPath));
+
+                            article.BrowseImage = uploadPath;
+                        }
+                    }
 
                     db.Articles.Add(article);
                     db.SaveChanges();

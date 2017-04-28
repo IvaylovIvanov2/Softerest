@@ -2,8 +2,14 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1 class="text-center">Softerest</h1>
-    <p class="text-center"><a >@Html.ActionLink("Create Your Own Article", "Create", "Article", null, new { @class = "btn btn-primary btn-lg" })</a></p>
-    <p class="text-center"><a>@Html.ActionLink("Take A Look Around ", "List", "Article", null, new { @class = "btn btn-primary btn-lg" })</a></p>
+<link href="~/Scripts/animate.css" rel="stylesheet" type="text/css" />
+
+<div class="container fadeInDown animated">
+    <div class="jumbotron">
+        <h1 class="text-center">Softerest</h1>
+        <div class="container bounce animated">
+            <p class="text-center"><a>@Html.ActionLink("Create Your Own Article", "Create", "Article", null, new { @class = "btn btn-primary btn-lg" })</a></p>
+            <p class="text-center"><a>@Html.ActionLink("Take A Look Around ", "List", "Article", null, new { @class = "btn btn-primary btn-lg" })</a></p>
+        </div>
+        </div>
 </div>

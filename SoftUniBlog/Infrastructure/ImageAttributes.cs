@@ -16,8 +16,12 @@ namespace SoftUniBlog.Infrastructure
                 return true;
             }
 
+            return imageUrl.EndsWith(".jpg") ||
+                imageUrl.EndsWith(".png") ||
+                imageUrl.EndsWith(".jpeg") ||
+                imageUrl.EndsWith(".gif") ||
+                imageUrl.EndsWith(".bmp");
 
-            return base.IsValid(value);
         }
     }
 }

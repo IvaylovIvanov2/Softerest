@@ -19,7 +19,14 @@
                         @article.Content
                     </p>
                     <p class="text-center">
-                        <img src="@article.ImageUrl" class="img-responsive" />
+                        @if (article.ImageUrl != null)
+                        {
+                            <img src="@article.ImageUrl" class="img-responsive" />
+                        }
+                        @if (article.BrowseImage != null)
+                        {
+                            <img src="@article.BrowseImage" class="img-responsive" />
+                        }
                     </p>
                     <footer class="pull-right">
                         <small class="author">
