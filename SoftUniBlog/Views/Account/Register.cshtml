@@ -1,4 +1,10 @@
-﻿@model SoftUniBlog.Models.RegisterViewModel
+﻿
+@if(Request.IsAuthenticated)
+{
+
+}
+
+@model SoftUniBlog.Models.RegisterViewModel
     <div class="container">
         <div class="well">
 <h2>@ViewBag.Title</h2>

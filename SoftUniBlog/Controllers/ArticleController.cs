@@ -31,7 +31,7 @@ namespace SoftUniBlog.Controllers
 
         [Authorize]
         [HttpPost]
-        public ActionResult Create(Article article, HttpPostedFileBase BrowseImage, HttpPostedFileBase ProfilePicture)
+        public ActionResult Create(Article article, HttpPostedFileBase BrowseImage)
         {
             if(ModelState.IsValid)
             {
